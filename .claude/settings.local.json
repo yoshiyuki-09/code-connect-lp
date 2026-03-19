@@ -1,0 +1,8 @@
+{
+  "permissions": {
+    "allow": [
+      "WebFetch(domain:izawasyouten.jp)",
+      "WebFetch(domain:e.kobe-c.ac.jp)"
+    ]
+  }
+}

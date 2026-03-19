@@ -1,0 +1,248 @@
+/* =====================
+   HERO
+   ===================== */
+
+#section-hero {
+  position: relative;
+  min-height: calc(100vh - 64px);
+  background: linear-gradient(
+    to bottom,
+    #0d2436 0%,
+    #113344 35%,
+    #143d44 70%,
+    #153f3f 100%
+  );
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+}
+
+/* overlayは不要のため非表示 */
+.hero-overlay {
+  display: none;
+}
+
+/* 薄いノートパソコンアイコン（テキストの背後） */
+.hero-laptop {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 72vw;
+  max-width: 640px;
+  pointer-events: none;
+  color: rgba(0, 200, 200, 0.13);
+  z-index: 1;
+}
+
+.hero-laptop svg {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* ---- SCENE LAYER ---- */
+
+.hero-scene {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+/* グリッド */
+.hero-grid {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(0, 165, 165, 0.07) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 165, 165, 0.07) 1px, transparent 1px);
+  background-size: 60px 60px;
+  -webkit-mask-image: linear-gradient(
+    to bottom,
+    transparent 0%,
+    rgba(0,0,0,0.5) 12%,
+    rgba(0,0,0,0.5) 88%,
+    transparent 100%
+  );
+  mask-image: linear-gradient(
+    to bottom,
+    transparent 0%,
+    rgba(0,0,0,0.5) 12%,
+    rgba(0,0,0,0.5) 88%,
+    transparent 100%
+  );
+}
+
+/* ホライゾン光（下部グロー） */
+.hero-horizon {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 260px;
+  background: linear-gradient(
+    to top,
+    rgba(0, 165, 165, 0.2) 0%,
+    transparent 100%
+  );
+}
+
+/* 光の柱（左右） */
+.hero-beam {
+  position: absolute;
+  width: 1px;
+  top: 0;
+  bottom: 0;
+  background: linear-gradient(
+    to bottom,
+    transparent 0%,
+    rgba(0, 165, 165, 0.25) 40%,
+    rgba(0, 165, 165, 0.4) 60%,
+    transparent 100%
+  );
+  animation: heroBeam ease-in-out infinite alternate;
+}
+
+@keyframes heroBeam {
+  from { opacity: 0.35; }
+  to   { opacity: 1; }
+}
+
+/* グロー球 */
+.hero-orb {
+  position: absolute;
+  border-radius: 50%;
+  animation: heroOrb ease-in-out infinite alternate;
+}
+
+@keyframes heroOrb {
+  from { transform: scale(1);    opacity: 0.6; }
+  to   { transform: scale(1.3);  opacity: 0.25; }
+}
+
+/* 浮遊するコード記号 */
+.hero-symbol {
+  position: absolute;
+  font-family: 'SFMono-Regular', 'Consolas', 'Courier New', monospace;
+  font-weight: 700;
+  user-select: none;
+  line-height: 1;
+  animation: heroFloat ease-in-out infinite;
+}
+
+/* 明るい記号（目立つ大型） */
+.hero-symbol.bright {
+  color: rgba(0, 220, 220, 0.38);
+}
+
+/* 中間の記号 */
+.hero-symbol.mid {
+  color: rgba(0, 200, 200, 0.22);
+}
+
+/* 薄い記号（遠景） */
+.hero-symbol.dim {
+  color: rgba(0, 165, 165, 0.1);
+}
+
+@keyframes heroFloat {
+  0%   { transform: translateY(0)     translateX(0)    rotate(-4deg); }
+  20%  { transform: translateY(-22px)  translateX(8px)   rotate(0deg);  }
+  45%  { transform: translateY(-10px)  translateX(-5px)  rotate(4deg);  }
+  70%  { transform: translateY(-28px)  translateX(4px)   rotate(-2deg); }
+  100% { transform: translateY(0)     translateX(0)    rotate(-4deg); }
+}
+
+/* 小さな光の粒 */
+.hero-star {
+  position: absolute;
+  border-radius: 50%;
+  background: rgba(0, 230, 230, 0.8);
+  animation: heroStar ease-in-out infinite alternate;
+}
+
+@keyframes heroStar {
+  from { opacity: 0.1;  transform: scale(0.7); }
+  to   { opacity: 1.0;  transform: scale(1.3); }
+}
+
+/* ---- CONTENT（奥からフェードイン） ---- */
+
+#section-hero .section-container {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  padding-top: 120px;
+  padding-bottom: 100px;
+}
+
+/* ページロード時のフェードイン：.hero-contentをロード後にis-loadedクラスで発火 */
+.hero-heading,
+.hero-sub,
+.hero-note,
+.hero-cta-wrap {
+  opacity: 0;
+  transform: scale(0.94) translateY(12px);
+}
+
+.hero-heading.is-visible  { animation: heroContentIn 0.9s cubic-bezier(0.22, 1, 0.36, 1) 0.1s forwards; }
+.hero-sub.is-visible      { animation: heroContentIn 0.9s cubic-bezier(0.22, 1, 0.36, 1) 0.35s forwards; }
+.hero-note.is-visible     { animation: heroContentIn 0.9s cubic-bezier(0.22, 1, 0.36, 1) 0.55s forwards; }
+.hero-cta-wrap.is-visible { animation: heroContentIn 1s  cubic-bezier(0.22, 1, 0.36, 1) 0.75s forwards; }
+
+@keyframes heroContentIn {
+  from {
+    opacity: 0;
+    transform: scale(0.92) translateY(16px);
+    filter: blur(4px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+    filter: blur(0);
+  }
+}
+
+.hero-heading {
+  text-align: center;
+  color: #ffffff;
+  font-size: 2.75rem;
+  line-height: 1.55;
+  font-weight: 700;
+  margin-bottom: 28px;
+  letter-spacing: -0.01em;
+  text-shadow: 0 0 48px rgba(0, 165, 165, 0.4);
+}
+
+.hero-sub {
+  text-align: center;
+  color: rgba(255, 255, 255, 0.82);
+  font-size: var(--font-size-md);
+  font-size: 1.2rem;
+  line-height: 1.95;
+  margin-bottom: 20px;
+  max-width: 580px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.hero-note {
+  color: rgba(142, 255, 168, 0.822);
+  font-size: 0.9rem;
+  line-height: 1.9;
+  margin-bottom: 48px;
+}
+
+.hero-cta-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+
+.hero-cta-wrap .btn-primary-inverse {
+  font-size: 1.0625rem;
+  padding: 18px 44px;
+  box-shadow: 0 0 40px rgba(0, 165, 165, 0.35);
+}

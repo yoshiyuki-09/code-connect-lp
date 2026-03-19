@@ -1,0 +1,943 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>コードコネクト｜宇部のプログラミング教室</title>
+  <meta name="description" content="宇部市・少人数制・Scratch経験者向けプログラミングスクール。8ヶ月でWebアプリを公開できる設計のプログラミング教室です。">
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/sections.css">
+</head>
+<body>
+  <!-- ===================== HEADER ===================== -->
+  <header class="site-header" id="site-header">
+    <div class="header-inner">
+      <a href="#section-hero" class="header-logo">
+        <span class="header-logo-en">Code Connect</span>
+        <span class="header-logo-ja">コードコネクト</span>
+      </a>
+      <a href="#" class="btn-header btn-line-cta">まず相談してみる</a>
+    </div>
+  </header>
+
+  <!-- フローティングCTAボタン -->
+  <a href="#" class="btn-floating btn-line-cta" id="floating-cta">まず相談してみる</a>
+
+  <!-- ===================== SECTION 1: HERO ===================== -->
+  <section id="section-hero">
+
+    <!-- シーンレイヤー：神戸女学院コンクールサイト風の複数レイヤー構成 -->
+    <div class="hero-scene">
+
+      <!-- グリッド背景（地面の格子に相当） -->
+      <div class="hero-grid"></div>
+
+      <!-- 光の柱（光のカーテンに相当） -->
+      <div class="hero-beam" style="left:18%;animation-duration:4s;"></div>
+      <div class="hero-beam" style="left:50%;animation-duration:6s;animation-delay:-2s;opacity:0.5;"></div>
+      <div class="hero-beam" style="right:18%;animation-duration:5s;animation-delay:-1s;"></div>
+
+      <!-- グロー球（雲に相当する大きな光の塊） -->
+      <div class="hero-orb" style="left:-5%;top:10%;width:380px;height:380px;background:radial-gradient(circle,rgba(0,165,165,0.14),transparent 70%);animation-duration:7s;"></div>
+      <div class="hero-orb" style="right:-8%;top:20%;width:320px;height:320px;background:radial-gradient(circle,rgba(0,165,165,0.1),transparent 70%);animation-duration:9s;animation-delay:-3s;"></div>
+      <div class="hero-orb" style="left:30%;bottom:-5%;width:420px;height:420px;background:radial-gradient(circle,rgba(0,165,165,0.12),transparent 70%);animation-duration:8s;animation-delay:-4s;"></div>
+
+      <!-- 浮遊するコード記号 — 巨大（bright） -->
+      <span class="hero-symbol bright" style="left:2%;top:12%;font-size:6.5rem;animation-duration:11s;">{</span>
+      <span class="hero-symbol bright" style="right:1%;top:10%;font-size:5.8rem;animation-duration:13s;animation-delay:-3s;">&lt;/&gt;</span>
+      <span class="hero-symbol bright" style="right:4%;bottom:14%;font-size:5rem;animation-duration:10s;animation-delay:-6s;">( )</span>
+
+      <!-- 浮遊するコード記号 — 大（mid） -->
+      <span class="hero-symbol mid" style="left:4%;top:65%;font-size:3.2rem;animation-duration:14s;animation-delay:-5s;">}</span>
+      <span class="hero-symbol mid" style="right:8%;top:52%;font-size:3.6rem;animation-duration:12s;animation-delay:-2s;">=&gt;</span>
+      <span class="hero-symbol mid" style="left:18%;bottom:10%;font-size:2.8rem;animation-duration:16s;animation-delay:-8s;">[ ]</span>
+      <span class="hero-symbol mid" style="right:22%;top:7%;font-size:3rem;animation-duration:15s;animation-delay:-4s;">===</span>
+      <span class="hero-symbol mid" style="left:26%;top:6%;font-size:2.4rem;animation-duration:11s;animation-delay:-1s;">&amp;&amp;</span>
+
+      <!-- 浮遊するコード記号 — 中（mid/dim） -->
+      <span class="hero-symbol mid" style="left:10%;top:38%;font-size:1.8rem;animation-duration:13s;animation-delay:-2s;">const</span>
+      <span class="hero-symbol dim" style="left:58%;bottom:6%;font-size:1.9rem;animation-duration:12s;animation-delay:-3s;">{ }</span>
+      <span class="hero-symbol dim" style="right:14%;top:30%;font-size:1.7rem;animation-duration:9s;animation-delay:-7s;">/ /</span>
+      <span class="hero-symbol mid" style="left:64%;top:5%;font-size:1.6rem;animation-duration:16s;animation-delay:-5s;">&lt;&gt;</span>
+      <span class="hero-symbol dim" style="right:30%;bottom:8%;font-size:2rem;animation-duration:14s;animation-delay:-9s;">return</span>
+      <span class="hero-symbol mid" style="left:78%;top:18%;font-size:1.5rem;animation-duration:10s;animation-delay:-2s;">fn()</span>
+      <span class="hero-symbol dim" style="left:8%;bottom:28%;font-size:1.4rem;animation-duration:18s;animation-delay:-4s;">let</span>
+
+      <!-- 浮遊するコード記号 — 小（dim） -->
+      <span class="hero-symbol dim" style="left:42%;top:4%;font-size:0.85rem;animation-duration:17s;animation-delay:-6s;">null</span>
+      <span class="hero-symbol dim" style="right:38%;top:14%;font-size:0.9rem;animation-duration:13s;animation-delay:-3s;">!==</span>
+      <span class="hero-symbol dim" style="left:72%;bottom:16%;font-size:0.8rem;animation-duration:15s;animation-delay:-7s;">async</span>
+      <span class="hero-symbol dim" style="left:20%;top:20%;font-size:0.75rem;animation-duration:11s;animation-delay:-9s;">( )</span>
+      <span class="hero-symbol dim" style="right:46%;bottom:20%;font-size:0.8rem;animation-duration:14s;animation-delay:-2s;">true</span>
+      <span class="hero-symbol dim" style="left:50%;top:88%;font-size:0.7rem;animation-duration:16s;animation-delay:-5s;">=&gt;</span>
+      <span class="hero-symbol dim" style="right:6%;top:78%;font-size:0.9rem;animation-duration:12s;animation-delay:-8s;">[ ]</span>
+      <span class="hero-symbol dim" style="left:34%;bottom:5%;font-size:0.7rem;animation-duration:19s;animation-delay:-1s;">var</span>
+
+      <!-- 小さな光の粒（星に相当） -->
+      <div class="hero-star" style="left:22%;top:12%;width:3px;height:3px;animation-duration:2.2s;"></div>
+      <div class="hero-star" style="left:48%;top:8%;width:2px;height:2px;animation-duration:3.5s;animation-delay:-1s;"></div>
+      <div class="hero-star" style="right:28%;top:16%;width:3px;height:3px;animation-duration:2.8s;animation-delay:-0.6s;"></div>
+      <div class="hero-star" style="left:72%;top:24%;width:2px;height:2px;animation-duration:4s;animation-delay:-1.8s;"></div>
+      <div class="hero-star" style="right:22%;top:72%;width:3px;height:3px;animation-duration:3s;animation-delay:-2.4s;"></div>
+      <div class="hero-star" style="left:32%;top:78%;width:2px;height:2px;animation-duration:2.5s;animation-delay:-0.9s;"></div>
+      <div class="hero-star" style="right:40%;bottom:18%;width:3px;height:3px;animation-duration:3.8s;animation-delay:-1.5s;"></div>
+      <div class="hero-star" style="left:62%;bottom:22%;width:2px;height:2px;animation-duration:2s;animation-delay:-0.3s;"></div>
+
+      <!-- ホライゾン光（地平線グローに相当） -->
+      <div class="hero-horizon"></div>
+
+    </div>
+    <!-- /hero-scene -->
+
+    <!-- 開いたノートパソコン（薄いアイコン） -->
+    <div class="hero-laptop" aria-hidden="true">
+      <svg viewBox="0 0 560 390" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <!-- スクリーン外枠 -->
+        <rect x="70" y="10" width="420" height="268" rx="10" stroke="currentColor" stroke-width="2.5"/>
+        <!-- スクリーン内枠（ベゼル） -->
+        <rect x="90" y="28" width="380" height="232" rx="4" stroke="currentColor" stroke-width="1.2"/>
+        <!-- ウェブカメラ -->
+        <circle cx="280" cy="21" r="4.5" stroke="currentColor" stroke-width="1.5"/>
+        <!-- 本体（キーボード部） -->
+        <path d="M28 298 L70 280 L490 280 L532 298 L532 322 Q532 334 518 334 L42 334 Q28 334 28 322 Z" stroke="currentColor" stroke-width="2.5"/>
+        <!-- ヒンジライン -->
+        <line x1="70" y1="280" x2="490" y2="280" stroke="currentColor" stroke-width="1"/>
+        <!-- キーボード列1 -->
+        <rect x="108" y="288" width="344" height="7" rx="2.5" stroke="currentColor" stroke-width="1" fill="none"/>
+        <!-- キーボード列2 -->
+        <rect x="116" y="301" width="328" height="7" rx="2.5" stroke="currentColor" stroke-width="1" fill="none"/>
+        <!-- スペースバー行 -->
+        <rect x="124" y="314" width="154" height="7" rx="2.5" stroke="currentColor" stroke-width="1" fill="none"/>
+        <!-- タッチパッド -->
+        <rect x="210" y="302" width="140" height="24" rx="6" stroke="currentColor" stroke-width="1.8" fill="none"/>
+        <!-- ボトムエッジ -->
+        <line x1="46" y1="332" x2="514" y2="332" stroke="currentColor" stroke-width="0.8" opacity="0.5"/>
+      </svg>
+    </div>
+
+    <div class="section-container">
+      <h1 class="hero-heading">
+        8ヶ月後、<br>
+        お子さんが作った
+        Webアプリに<br>
+        宇部からアクセス
+      </h1>
+      <p class="hero-sub">
+        「できるかどうか」より<br>
+        「続けられるか」を大切にした<br>
+        安心設計をご用意しています。
+      </p>
+      <p class="hero-note">
+        少人数制授業（1 〜 3人）・Scratch経験者向け<br>
+      </p>
+      <div class="hero-cta-wrap">
+        <a href="#" class="btn-primary-inverse btn-line-cta">まず相談してみる（LINE登録・無料）</a>
+      </div>
+    </div>
+
+  </section>
+
+  <!-- TEAL BAND -->
+  <div class="band-teal">
+    <p class="band-text">「続けられる設計」があるから、ゴールできる</p>
+  </div>
+
+  <!-- ===================== SECTION 2: PROBLEM ===================== -->
+  <section id="section-problem">
+    <div class="section-container">
+
+      <div class="section-heading fade-in">
+        <span class="section-heading-en">Problem</span>
+        <h2 class="section-heading-ja">「不安」を前提にして設計しています。</h2>
+      </div>
+
+      <p class="problem-lead fade-in">
+        プログラミングに興味はある。<br>
+        でも、こんな気持ちはありませんか。
+      </p>
+
+      <div class="anxiety-cards fade-in">
+        <div class="anxiety-card">「うちの子に向いているか、正直分からない。」</div>
+        <div class="anxiety-card">「途中でつまづいて、嫌いになってしまわないか不安。」</div>
+        <div class="anxiety-card">「周りについていけなくなったとき、どうなるんだろう。」</div>
+      </div>
+
+      <p class="problem-additional fade-in">それに加えて、こんな状況もあるかもしれません。</p>
+      <blockquote class="scratch-quote fade-in">
+        「Scratchは一通りやった。<br>
+        でも次に何を学べばいいか分からないまま、止まっている。」
+      </blockquote>
+
+      <div class="problem-conclusion fade-in">
+        <p>これらはすべて、お子さんの問題ではありません。</p>
+        <p><span class="emphasis-bold">「続けられる」設計がなかっただけです。</span></p>
+      </div>
+
+      <p class="section-bridge fade-in">
+        コードコネクトは、その不安を前提に授業・制度・サポート体制を設計しています。
+      </p>
+    </div>
+  </section>
+
+  <!-- ===================== SECTION 3: ROADMAP ===================== -->
+  <section id="section-roadmap">
+    <div class="section-container fade-in">
+
+      <div class="section-heading">
+        <span class="section-heading-en">Roadmap</span>
+        <h2 class="section-heading-ja">
+          <span class="emphasis-bold">8ヶ月でゴールできる理由</span>
+        </h2>
+      </div>
+
+      <p class="roadmap-lead">
+        勉強して知識を習得すれば、「いつかWebアプリを作れるようになる」という曖昧な目標では、続きません。
+        コードコネクトでは、8ヶ月を3つのステップに分け、各ステップに必ず「作れた」という成果を置いています。
+        成果があるから、続けられる。続けられるから、到達できる。<br>
+        <br>
+        わたしたちが大切にしているのは「知識の量」ではなく「経験の質」です。
+        手を動かして、失敗して、それでも動いたときの「できた」という体験が、次へ進む力になります。
+        3ヶ月ごとに、形を持つ成果が確実に生まれるから、
+        子どもたち自身が「これなら続けられるかも」と感じることができるのです。
+      </p>
+
+      <div class="steps-container">
+
+        <!-- STEP 1 -->
+        <div class="step-card">
+          <!-- 仮置き画像：実際の授業・制作風景に差し替えてください -->
+          <div class="step-card-image">
+            <img src="https://picsum.photos/seed/step1-html/840/370" alt="HTML・CSS・JavaScriptを学ぶ授業の様子">
+          </div>
+          <div class="step-card-body">
+            <div class="step-header">
+              <span class="step-label">STEP 1</span>
+              <span class="step-period">Web基礎コース</span>
+            </div>
+            <div class="step-detail">
+              <div class="step-detail-item">
+                <span class="step-detail-label">期間</span>
+                <span class="step-detail-value">3ヶ月</span>
+              </div>
+              <div class="step-detail-item">
+                <span class="step-detail-label">学ぶこと</span>
+                <div class="step-detail-content">
+                  <div>HTML / CSS / JavaScript</div>
+                  <div class="step-detail-description">Webページの見た目・レイアウト、ボタンをクリックしたときの動きなど</div>
+                </div>
+              </div>
+              <div class="step-detail-item">
+                <span class="step-detail-label">作るもの</span>
+                <span>イベント申込ミニアプリ（フォームに入力したデータが保存・表示される）</span>
+              </div>
+            </div>
+            <div class="step-detail-item">
+              <div class="step-detail-label">到達目標</div>
+              <div class="step-confidence-content">「自分でも動くものが作れる」</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="step-arrow">↓</div>
+
+        <!-- STEP 2 -->
+        <div class="step-card">
+          <!-- 仮置き画像：実際の授業・制作風景に差し替えてください -->
+          <div class="step-card-image">
+            <img src="https://picsum.photos/seed/step2-firebase/840/370" alt="Firebase・Firestoreを学ぶ授業の様子">
+          </div>
+          <div class="step-card-body">
+            <div class="step-header">
+              <span class="step-label">STEP 2</span>
+              <span class="step-period">Web実践コース</span>
+            </div>
+            <div class="step-detail">
+              <div class="step-detail-item">
+                <span class="step-detail-label">期間</span>
+                <span class="step-detail-value">2ヶ月</span>
+              </div>
+              <div class="step-detail-item">
+                <span class="step-detail-label">学ぶこと</span>
+                <div class="step-detail-content">
+                  <div>Firebase / Firestore</div>
+                  <div class="step-detail-description">複数人で同時にアクセスでき、リアルタイムで更新されるデータベース</div>
+                </div>
+              </div>
+              <div class="step-detail-item">
+                <span class="step-detail-label">作るもの</span>
+                <span>投票Webアプリ（複数人がアクセスしてリアルタイムで結果が変わる）</span>
+              </div>
+            </div>
+            <div class="step-detail-item">
+              <div class="step-detail-label">到達目標</div>
+              <div class="step-confidence-content">「インターネット上で動くものが作れる」</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="step-arrow">↓</div>
+
+        <!-- STEP 3 -->
+        <div class="step-card">
+          <!-- 仮置き画像：実際の授業・制作風景に差し替えてください -->
+          <div class="step-card-image">
+            <img src="https://picsum.photos/seed/step3-webapp/840/370" alt="自作テーマWebアプリを公開する様子">
+          </div>
+          <div class="step-card-body">
+            <div class="step-header">
+              <span class="step-label">STEP 3</span>
+              <span class="step-period">Web作品制作コース</span>
+            </div>
+            <div class="step-detail">
+              <div class="step-detail-item">
+                <span class="step-detail-label">期間</span>
+                <span class="step-detail-value">3ヶ月</span>
+              </div>
+              <div class="step-detail-item">
+                <span class="step-detail-label">学ぶこと</span>
+                <div class="step-detail-content">
+                  <div>Firebase Hosting / テーマ設計</div>
+                  <div class="step-detail-description">自分のアプリをインターネット上に公開し、誰でもアクセスできるようにする</div>
+                </div>
+              </div>
+              <div class="step-detail-item">
+                <span class="step-detail-label">作るもの</span>
+                <span>自作テーマWebアプリ（自分で考えたテーマでURLを取得して公開）</span>
+              </div>
+            </div>
+            <div class="step-detail-item">
+              <div class="step-detail-label">到達目標</div>
+              <div class="step-confidence-content">「宇部から、世界中でアクセスできる自分だけのWebアプリを作る」</div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Scratch接続 -->
+      <div class="scratch-block">
+        <h3><span class="emphasis-bold">Scratchの経験を活かせます</span></h3>
+        <p>
+          多くの保護者の方が「Scratchとプログラミングは別物では？」と感じておられますが、実際は違います。<br>
+          例えば、Scratchで身についた「もし〜なら」という条件分岐の考え方は、JavaScriptのif文にそのまま対応しています。
+        </p>
+        <table class="scratch-table">
+          <thead>
+            <tr>
+              <th>Scratchで学んだ考え方</th>
+              <th>JavaScriptではこう書く</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>もし〜なら</td>
+              <td>if () { }</td>
+            </tr>
+            <tr>
+              <td>〜を繰り返す</td>
+              <td>for ( ) { }</td>
+            </tr>
+            <tr>
+              <td>変数</td>
+              <td>let / const</td>
+            </tr>
+          </tbody>
+        </table>
+        <p>
+          <br>
+          もちろん「書き方」などは新しく学ぶ必要がありますが、「考え方の根っこ」はすでに身についています。
+          ゼロから始める子と比べて、ぐっと<span class="emphasis">早く進むこと</span>ができるんです。
+        </p>
+      </div>
+
+      <!-- 設計の理由 -->
+      <div class="design-reason-block">
+        <h3>なぜこのようなコース設計にしているのか</h3>
+        <p>
+          自転車の乗り方を教科書で学んでから乗る人はいません。<br>
+          まず乗って、転んで、「なぜバランスが取れるのか」を体で理解していくはずです。<br><br>
+          コードコネクトもこの順番を採用しています。
+        </p>
+        <p>
+          <br>多くの教室では、
+          コードの書き方・文法・ルールを
+          先に学んでから制作に入ります。<br><br>
+
+          ゴールが見えない学習は、
+          続けることが目的になります。<br><br>
+
+          続けることが目的になったとき、
+          子どもは最初にこう感じます。<br><br>
+
+          「これ、いつまで続けるんだろう。」
+
+        </p>
+        <p>
+          <br>だからコードコネクトでは、順番を逆です。<br><br>
+          「作るもの」が最初にあります。<br><br>
+          作るために「今これが必要」って分かるから、学ぶことが楽しくなります。<br><br>
+          そして、3ヶ月ごとに、自分で作った確実な作品が出来上がります。<br><br>
+          それが次の3ヶ月を続けられる理由になります。
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- PHOTO BREAK -->
+  <!-- 背景画像は sections.css の .section-photo-break で設定（仮置き） -->
+  <div class="section-photo-break fade-in">
+    <div class="photo-break-overlay">
+      <blockquote class="photo-break-quote">
+        「<span class="emphasis-gradient">作るもの</span>」が先にある。<br>
+        だから、<span class="emphasis-gradient">続けられる</span>。
+      </blockquote>
+    </div>
+  </div>
+
+  <!-- ===================== SECTION 4: PHILOSOPHY ===================== -->
+  <section id="section-philosophy">
+    <div class="section-container">
+
+      <div class="section-heading fade-in">
+        <span class="section-heading-en">Philosophy</span>
+        <h2 class="section-heading-ja">
+          「続けられる」授業を目指して
+        </h2>
+        <p>
+          教室全体の設計だけでなく、授業ひとつひとつにも「続けられる」工夫で、途中でやめたくならない学びの流れをつくっています。
+        </p>
+      </div>
+
+      <div class="principle-cards">
+
+        <div class="principle-card fade-in">
+          <p class="principle-number">Principle 01</p>
+          <h3 class="principle-title"><span class="emphasis-bold">分からない人を、一人にしない</span></h3>
+          <p class="principle-body">
+            プログラミングでは、「あれ、思った通りに動かない」という「つまづき」が必ず出てきます。<br>
+            その「つまずき」を一緒に見つけ、言葉にしていくことで、「自分で気づける」力を育てます。
+            そのためには、答えを教えるのではなく、考えるヒントを引き出します。
+            <span class="emphasis">答えを自分で見つけ、自分の言葉に</span><span class="emphasis">できた</span>時、次へ進む自信へとつながります。
+          </p>
+        </div>
+
+        <div class="principle-card fade-in">
+          <p class="principle-number">Principle 02</p>
+          <h3 class="principle-title"><span class="emphasis-bold">時間ではなく、理解の深さで進む</span></h3>
+          <p class="principle-body">
+            授業では「分かったつもり」で次へ進むのではなく、一緒に立ち止まって、繰り返し考え、時間をかけてでも「分かった」を目指します。
+            だからこそ、<span class="emphasis">「3ヶ月で絶対に終わる」とは言いません。</span><br>
+            お子さんによっては、理解のペースに合わせて、授業の回数を増やして対応します。<br>
+            「早く終わらせること」より「確かな力が身につくこと」を、わたしたちは大事にしています。
+          </p>
+        </div>
+
+        <div class="principle-card fade-in">
+          <p class="principle-number">Principle 03</p>
+          <h3 class="principle-title"><span class="emphasis-bold">競争ではなく、一緒に学び合う</span></h3>
+          <p class="principle-body">
+            講師1人に対して、生徒1〜3人の少人数制です。
+            他の子の考え方や疑問に触れることで、
+            「自分だけじゃない」という安心と、「別の考え方もある」という気づきが生まれます。
+            競争ではなく、相互作用で理解が深まる環境です。
+            そういう疑問や発見が、実は一番の学びになり、それが「続けられる」理由にもなります。
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== SECTION 5: CLASS ===================== -->
+  <section id="section-class">
+    <div class="section-container fade-in">
+
+      <div class="section-heading">
+        <span class="section-heading-en">Class</span>
+        <h2 class="section-heading-ja">「止まったまま」を作らない授業の中身</h2>
+      </div>
+
+      <!-- 基本構造 -->
+      <div class="class-basics">
+        <ul class="class-basics-list">
+          <li class="class-basics-item">
+            <strong>Duration</strong>
+            1回 : 90〜120分
+          </li>
+          <li class="class-basics-item">
+            <strong>Class Size</strong>
+            講師1人、生徒1〜3人
+          </li>
+          <li class="class-basics-item">
+            <strong>Instructor</strong>
+            最初から最後まで、担当講師は変わりません。
+          </li>
+        </ul>
+      </div>
+
+      <!-- シーンカード -->
+      <div class="scene-cards">
+
+        <div class="scene-card">
+          <!-- 仮置き画像：実際の授業風景に差し替えてください -->
+          <div class="scene-card-image">
+            <img src="https://picsum.photos/seed/scene-01/400/300" alt="授業の様子">
+          </div>
+          <div class="scene-card-body">
+            <p class="scene-number">Scene 01</p>
+            <h3 class="scene-title"><span class="emphasis">「手を動かす」がもちろん大事</span></h3>
+            <p class="scene-body">
+              基本的な授業構成は、最初の25分で「今日やること」を説明した後、残りの時間は「実装してみる」時間です。<br>
+              お子さんが実際にコードを書き、動かして、失敗を経験する。<br>
+              その過程で「なぜこう書くのか」を、その場で体験を通じて理解していきます。
+            </p>
+          </div>
+        </div>
+
+        <div class="scene-card">
+          <!-- 仮置き画像：実際の授業風景に差し替えてください -->
+          <div class="scene-card-image">
+            <img src="https://picsum.photos/seed/scene-02/400/300" alt="授業の様子">
+          </div>
+          <div class="scene-card-body">
+            <p class="scene-number">Scene 02</p>
+            <h3 class="scene-title"><span class="emphasis">エラーが出たら、そこが学びのチャンス</span></h3>
+            <p class="scene-body">
+              動かない→エラーメッセージを読む→原因を予測する→修正してみる。<br>
+              この「試行錯誤のループ」こそが、実務に近いプログラミングの力になります。<br>
+              失敗を恐れずに、その過程で何が起きているかを観察する癖をつけていきます。
+            </p>
+          </div>
+        </div>
+
+        <div class="scene-card">
+          <!-- 仮置き画像：実際の授業風景に差し替えてください -->
+          <div class="scene-card-image">
+            <img src="https://picsum.photos/seed/scene-03/400/300" alt="授業の様子">
+          </div>
+          <div class="scene-card-body">
+            <p class="scene-number">Scene 03</p>
+            <h3 class="scene-title"><span class="emphasis">異なる考え方が学びになる</span></h3>
+            <p class="scene-body">
+              同じボタン機能を実装するとき、A君はこう書いた、B君はこう書いた。<br>
+              どちらも動く。なぜ両方が動くのか。どちらが読みやすいのか。<br>
+              「別の考え方、作り方があるんだ」という発見が、その子の引き出しを増やします。<br>
+              講師1人に生徒1〜3人だからこそ、そういう相互作用が自然に起きる環境です。
+            </p>
+          </div>
+        </div>
+      </div>
+
+            <!-- 指導者紹介 -->
+      <div class="instructor-block fade-in">
+        <div class="instructor-layout">
+          <!-- 仮置き画像：実際の写真に差し替えてください -->
+          <div class="instructor-photo-wrap">
+            <img
+              src="https://picsum.photos/seed/instructor-yoshiyuki/400/400"
+              alt="中村吉元"
+              class="instructor-photo"
+            >
+          </div>
+          <div class="instructor-text-wrap">
+            <p class="instructor-role">コードコネクト 担当</p>
+            <h3 class="instructor-name">中村吉元<span>（なかむら よしゆき）</span></h3>
+            <div class="instructor-body">
+              <p>
+                「プログラミングができる！」<br>
+                ではなくて、「プログラミングが好き！」<br>
+                そして、「学ぶことそのものが好きになる」—<br><br>
+                それがわたしたちが大切にしていることです。<br>
+              </p>
+              <p class="instructor-values">
+                置いていかれない。<br>
+                比べられすぎない。<br>
+                分からないを我慢しない。
+              </p>
+              <p>
+                <br>その環境をつくるために、授業・制度・サポート体制を作り上げました。<br><br>
+                ご本人にとっても、保護者の方にとっても、
+                納得して通っていただける教室であるために、どんなちょっとしたことでも構いませんので、ご相談お待ちしています。
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="class-cta-note fade-in">
+        ただ、実際の授業の雰囲気は、言葉ではどうしても伝えきれません。<br>
+        ぜひ体験会にお子さんと一緒にご参加いただき、ご確認ください。<br>
+        <a href="#cta-button" class="text-link-trial">
+          体験会の申し込みはこちら
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ===================== SECTION 6: PROOF ===================== -->
+  <section id="section-proof">
+    <div class="section-container fade-in">
+
+      <div class="section-heading">
+        <span class="section-heading-en">Achievement</span>
+        <h2 class="section-heading-ja">
+          現在、受講中の生徒が<br>
+          3ヶ月成果としてWebサイトを<br>
+          制作しています。
+        </h2>
+      </div>
+
+      <div class="proof-placeholder">
+        <div class="proof-placeholder-icon">🛠</div>
+        <p>公開まで、もう少しお待ちください。</p>
+        <p>完成次第、こちらに掲載します。</p>
+      </div>
+
+      <p class="proof-alt">
+        完成前に確認したい方は、体験会にてご覧いただけます。<br>
+      </p>
+    </div>
+  </section>
+
+  <!-- ===================== SECTION 7: PRICE ===================== -->
+  <section id="section-price">
+    <div class="section-container fade-in">
+
+      <div class="section-heading">
+        <span class="section-heading-en">Price</span>
+        <h2 class="section-heading-ja">料金</h2>
+      </div>
+
+      <p class="price-rationale">
+        講師1人に生徒1〜3人の少人数制だからこそ、一人一人の小さなサインを見逃さず、その瞬間に対応できます。<br>
+        大人数で効率よく教えるのではなく、1人ひとりと向き合う教室にしています。<br>
+        その選択の結果が、この料金です。<br><br>
+        現在はWeb制作基礎コースのみをご案内しています。基礎をしっかり固めてから次のステップへ進むため、段階的な学習設計を採用しているからです。
+      </p>
+
+      <!-- 料金カード -->
+      <div class="price-card">
+        <p class="price-card-title">Web制作基礎コース</p>
+        <table class="price-table">
+          <tbody>
+            <tr>
+              <th>月額</th>
+              <td><span class="price-amount">¥22,400</span>（税込）</td>
+            </tr>
+            <tr>
+              <th>受講料/回</th>
+              <td>¥2,800（税込）</td>
+            </tr>
+            <tr>
+              <th>入会金</th>
+              <td>¥5,500（税込）</td>
+            </tr>
+            <tr>
+              <th>受講期間</th>
+              <td>3ヶ月〜</td>
+            </tr>
+            <tr>
+              <th>授業</th>
+              <td>週2回・90分</td>
+            </tr>
+            <tr>
+              <th>定員</th>
+              <td>1〜3人</td>
+            </tr>
+          </tbody>
+        </table>
+        <div class="price-highlight">
+          <p class="total-label">3ヶ月の総額目安</p>
+          <p class="total-amount">¥72,700（税込）</p>
+          <p class="total-formula">¥22,400 × 3ヶ月 ＋ 入会金¥5,500</p>
+        </div>
+      </div>
+
+      <!-- 正直な説明 -->
+      <div class="honest-block">
+        <h3><span class="emphasis-bold">コードコネクトの受講期間と費用について、</span><br><span class="emphasis-bold">正直にお話しします。</span></h3>
+        <p>
+          記載している3ヶ月という期間は、標準的な最小構成です。<br>
+          でも「時間ではなく理解で進む」という設計なので、
+          お子さんの進度によっては<span class="emphasis">3ヶ月を超える場合</span><span class="emphasis">があります。</span><br>
+          そのときは、受講期間と費用が増える可能性があります。<br>
+          それは事実です。
+        </p>
+        <p>ただし、<span class="emphasis">以下の2点は絶対にお約束します。</span></p>
+        <ul class="honest-promises">
+          <li>授業回数の調整は必ず事前にご相談します。相談なく回数が増えることはありません。</li>
+          <li>進度の状況は毎月お伝えします。「いつ終わるか分からない」という不安な状態にはしません。</li>
+        </ul>
+        <p>体験会では、「お子さんだったらどのくらいかかりそうか」ということもお話しできます。</p>
+      </div>
+
+      <!-- 安心ポリシー -->
+      <div class="policy-cards">
+        <div class="section-heading fade-in">
+          <span class="section-heading-en">Safety Policy</span>
+          <h2 class="section-heading-ja">安心サポート</h2>
+        </div>
+
+        <div class="policy-card fade-in">
+          <div class="policy-number-badge">01</div>
+          <div class="policy-content">
+            <h3 class="policy-title"><span class="emphasis-bold">いつでも退会できます</span></h3>
+            <p class="policy-body">
+              合わないと感じたら、いつでも退会できます。
+              月途中での退会の場合、未受講分の授業料は返金します。
+              「3ヶ月続けなければならない」という縛りはありません。
+            </p>
+          </div>
+        </div>
+
+        <div class="policy-card fade-in">
+          <div class="policy-number-badge">02</div>
+          <div class="policy-content">
+            <h3 class="policy-title"><span class="emphasis-bold">授業回数は相談できます</span></h3>
+            <p class="policy-body">
+              お子さんの様子を見ながら、進み具合に合わせて授業回数を調整させていただきます。<br>
+              進み具合に合わせて、回数を調整できます。<br>
+              事前のご相談なく授業回数が増えることはありません。
+            </p>
+          </div>
+        </div>
+
+        <div class="policy-card fade-in">
+          <div class="policy-number-badge">03</div>
+          <div class="policy-content">
+            <h3 class="policy-title"><span class="emphasis-bold">欠席時は振替対応します</span></h3>
+            <p class="policy-body">
+              欠席した場合、月1回まで振替が可能です。
+              当月内での振替が難しい場合は、翌月に1回分追加して受講できます。
+            </p>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="price-cta-note">
+        実際の授業の雰囲気、わたしたちの指導の仕方、
+        どんなペースでどんなことを学んでいくのか。<br>
+        お子さんには「どのくらい時間がかかりそうか」という見通しも。<br>
+        <span class="emphasis-bold">体験会は完全無料です。</span>
+        ここで、当教室の考え方・進め方を納得していただきたいと思っています。<br>
+        <a href="#cta-button" class="text-link-trial">
+          体験会の申し込みはこちら →
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== SECTION 8: FAQ ===================== -->
+  <section id="section-faq">
+    <div class="section-container">
+
+      <div class="section-heading fade-in" >
+        <span class="section-heading-en">FAQ</span>
+        <h2 class="section-heading-ja">よくあるご質問</h2>
+      </div>
+
+      <div class="faq-list fade-in">
+
+        <div class="faq-item">
+          <button class="faq-question" type="button">
+            <span class="faq-q-mark">Q</span>
+            <span class="faq-question-text">Scratch未経験でも受講できますか？</span>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">
+              <p>
+                <span class="emphasis-bold">受講できます。</span><br>
+                Scratch経験者が多い教室ですが、
+                未経験の方でも基礎コースから無理なく始められる設計になっています。<br>
+                お子さんがScratchをやっていないという場合は、
+                体験会でご相談ください。その子に合った進め方をご提案します。
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" type="button">
+            <span class="faq-q-mark">Q</span>
+            <span class="faq-question-text">費用の総額はどのくらいになりますか？</span>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">
+              <p>
+                3ヶ月の標準的な総額は¥72,700（税込）です。<br>
+                月額¥22,400 × 3ヶ月 ＋ 入会金¥5,500 ＝ ¥72,700。
+              </p>
+              <p>
+                ただし「時間ではなく理解で進む」設計のため、
+                お子さんの進度によっては3ヶ月を超える場合があります。
+                受講期間の見通しは体験会でご相談いただけます。
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" type="button">
+            <span class="faq-q-mark">Q</span>
+            <span class="faq-question-text">体験会はどんな内容ですか？</span>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">
+              <p>以下の内容をご確認いただけます。</p>
+              <ul>
+                <li>実際の授業の雰囲気</li>
+                <li>カリキュラムの詳細</li>
+                <li>指導方針</li>
+                <li>お子さんの受講期間の見通し</li>
+                <li>ご質問・ご相談</li>
+              </ul>
+              <p>費用は無料です。体験会に参加したからといって、入会を強制することはありません。</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" type="button">
+            <span class="faq-q-mark">Q</span>
+            <span class="faq-question-text">欠席した場合はどうなりますか？</span>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">
+              <p>
+                月1回まで振替が可能です。
+                当月内での振替が難しい場合は、翌月に1回分追加して受講できます。
+                欠席による返金は行っておりませんが、
+                月2回以上の欠席が続く場合は個別にご相談します。
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" type="button">
+            <span class="faq-q-mark">Q</span>
+            <span class="faq-question-text">合わなかった場合、退会できますか？</span>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">
+              <p>
+                いつでも退会できます。
+                月途中での退会の場合、未受講分の授業料は返金します。
+                「続けられるか不安」という場合も、まず体験会でご確認ください。
+              </p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <p class="section-bridge">
+        ここまで読んでいただいた方へ。
+        設計・授業・料金・よくある疑問とお伝えしてきました。
+        最後に、一歩だけ踏み出してください。
+        <span class="emphasis-bold">LINE登録・体験会参加、どちらも完全無料</span>で行っておりますので、
+        ぜひお気軽にご相談ください。
+      </p>
+    </div>
+  </section>
+
+  <!-- ===================== SECTION 9: CTA ===================== -->
+  <!-- 背景画像は sections.css の #section-cta で設定（仮置き） -->
+  <section id="section-cta">
+    <div class="cta-overlay">
+      <div class="section-container fade-in on-dark">
+
+        <div class="section-heading">
+          <span class="section-heading-en">Contact</span>
+          <h2 class="section-heading-ja"><span class="emphasis-bold">まず、ご相談ください。</span></h2>
+        </div>
+
+        <p class="cta-lead">
+          「入会するかどうか」決める必要はありません。<br><br>
+          「お子さんの状況に合うかどうか」を<br>確認するための場所です。
+        </p>
+
+        <!-- 登録後に得られること -->
+        <div class="cta-benefits">
+
+          <div class="cta-benefit-card">
+            <div class="benefit-number-badge">01</div>
+            <div class="benefit-content">
+              <h3 class="benefit-title">8ヶ月設計の詳細説明</h3>
+              <p class="benefit-body">
+                このLPでお伝えしきれなかったカリキュラムの詳細と学習の進め方をお伝えします。
+              </p>
+            </div>
+          </div>
+
+          <div class="cta-benefit-card">
+            <div class="benefit-number-badge">02</div>
+            <div class="benefit-content">
+              <h3 class="benefit-title">お子さんの状況に合わせた簡易診断</h3>
+              <p class="benefit-body">
+                「Scratchをどこまでやったか」「今どんな状態か」を簡単にお聞きして、
+                コードコネクトが合っているかどうかを一緒に確認します。
+              </p>
+            </div>
+          </div>
+
+          <div class="cta-benefit-card">
+            <div class="benefit-number-badge">03</div>
+            <div class="benefit-content">
+              <h3 class="benefit-title">体験会のご案内</h3>
+              <p class="benefit-body">
+                ご希望の方に、体験会の日程をご案内します。
+                体験会への参加は任意です。登録後に強制的に案内が届くことはありません。
+              </p>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- メインCTA -->
+        <div class="cta-main-btn-wrap">
+          <a href="#" class="btn-primary-inverse btn-line-cta">まず相談してみる（LINE登録・無料）</a>
+        </div>
+
+        <p class="cta-note">
+          無理な勧誘はしません。<br>合わないと感じたら、そのままで構いません。<br><br>
+          「納得して通っていただける教室」を目指しているので、<br>納得できない方に入会を勧めることは致しません。
+        </p>
+
+        <!-- サブCTA -->
+        <div class="cta-sub-btn-wrap">
+          <p class="cta-sub-note">
+            体験会に参加したいとお考えの方はこちら
+          </p>
+          <a href="#" id="cta-button" class="btn-secondary-inverse btn-form-cta">体験会を申し込む</a>
+        </div>
+
+        <!-- クロージング -->
+        <div class="cta-closing">
+          <p><strong><span class="emphasis-bold">コードコネクト</span></strong></p>
+          <p>担当 中村吉元（なかむら よしゆき）</p>
+          <p>
+            宇部市で、「続けられる設計」のプログラミング教室を運営しています。<br>
+            どんな小さな疑問でも、LINEからお気軽にご相談ください。
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <script src="js/scroll.js"></script>
+  <script src="js/floating-cta.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
